@@ -19,8 +19,16 @@ pipeline {
                 sh './venv/bin/pip install -r requirements.txt'
             }
         }
+
+        stage('Quality (Linting)') {
+            steps {
+                echo 'Checking PEP 8 -compatibility...'
+                // Running flake8 linter,
+                sh './venv/bin/flake8 src tests'
+            }
+        }
         
-        stage('Testing & Quality') {
+        stage('Testing') {
             steps {
                 echo 'Running tests...'
                 // Running tests and generate xml report for Jenkins
