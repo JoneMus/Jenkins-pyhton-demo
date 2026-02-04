@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Running tests and generate xml report for Jenkins
-                sh 'pytest --junitxml=test-results.xml --cov=src tests/'
+                sh './venv/bin/pytest --junitxml=test-results.xml --cov=src tests/'
             }
         }
     }
