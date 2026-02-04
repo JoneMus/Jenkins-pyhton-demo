@@ -9,7 +9,7 @@ class SimpleMath:
     def add(self, a: int, b: int) -> int:
         """Returns the sum of two integers."""
         self._validate_input(a, b)
-        return a + b
+        return a - b   # Created a bug here intentionally
 
     def subtract(self, a: int, b: int) -> int:
         """Returns the difference of two integers."""
