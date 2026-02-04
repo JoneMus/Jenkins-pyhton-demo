@@ -9,8 +9,14 @@ pipeline {
                 // HOX! If running Jenkins on Windows without Docker, 
                 // change "sh" to "bat" commands below.
                 
+                // Create a virtual environment
+                sh 'python3 -m venv venv'
+
+                // Upgrade pip in the virtual environment
+                sh './venv/bin/pip install --upgrade pip'
+                
                 // Install dependencies
-                sh 'pip install -r requirements.txt' 
+                sh './venv/bin/pip install -r requirements.txt'
             }
         }
         
